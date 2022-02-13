@@ -1,6 +1,4 @@
 public class Queue {
-    // we define the max value as an invalid value
-    int INVALID_VALUE = Integer.MAX_VALUE;
 
     // queue node class
     private class Node {
@@ -31,7 +29,7 @@ public class Queue {
     }
 
     // removes and returns the first element from the queue (null if empty)
-    public int dequeue() {
+    public Integer dequeue() {
         if(this.size != 0) {
             Node currentHead = this.head; // keep track of the head node before removing it
             this.head = this.head.nextNode;
@@ -39,15 +37,15 @@ public class Queue {
             this.size--; // decrease the size of the queue
             return currentHead.value;
         }
-        return INVALID_VALUE;
+        return null;
     }
 
     // returns first element of the queue without removing it (null if empty)
-    public int first() {
+    public Integer first() {
         if(this.size != 0) {
             return this.head.value;
         }
-        return INVALID_VALUE;
+        return null;
     }
 
     // returns the size of the queue
